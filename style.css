@@ -9,21 +9,34 @@
 
 body{
 justify-content: center;
-  background-color: #2af1ff36;
+  background-color: #90e9ff5e;
 }
 header {
+  max-width: 100%;
   width: 90%;
-  height: 80px;
+  height: 90px;
+  margin-left: 5%;
   background: linear-gradient(to right, rgb(229, 255, 0), rgb(21, 255, 0));
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 12px;
-  margin-left: 5%;
+  justify-content: space-around;
+  padding: 0 20px;
   border-radius: 15px;
   margin-top: 10px;
-
+ 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
 }
+
+.nav-bar {
+max-width: 100%;
+  display: flex;
+  padding-right: auto;
+margin-right: 69px;
+
+border-radius: 20px;
+margin-left: 40px;
+}
+
 .logo {
   font-size: 20px;
   font-weight: bold;
@@ -35,8 +48,9 @@ header {
   transition: 0.6s;
   font-size: 40px;
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
 
-
+  margin-left: 20px;
 }
 
 .escudo {
@@ -47,34 +61,35 @@ header {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
 }
 
-.bars {
-  display: none;
-}
+
 
 .nav-bar ul {
+  justify-content: space-between;
 display: flex;
-position: relative;
+position: end;
+padding: 12px;
 }
 
 .nav-bar ul li a {
   display: block;
   color: white;
   font-size: 18px;
-  padding: 10px 25px;
+  padding: 10px 20px;
+  margin: 0 4px;
   border-radius: 15px;
   transition: all 0.2s ease;
-  margin: 0 5px;
+  justify-content: space-between;
 }
 
 .nav-bar ul li a:hover {
   color: black;
-  background-color: rgb(245, 242, 77);
-
+  background: linear-gradient(to right, rgb(229, 255, 0), rgb(21, 255, 0));
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
 }
 .nav-bar ul li a.active {
   color: black;
   background-color: rgb(229, 255, 0);
-
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 @media(max-width:900px) {
@@ -96,8 +111,8 @@ position: relative;
     height: 0px;
     position: absolute;
     padding-bottom: 0;
-    top: 80px;
-    left: 5%;
+    top: 87px;
+    right: 2.5%;
     width: 90%;
     background: linear-gradient(to right, #d9ff00e5, rgba(21, 255, 0, 0.959));
     transition: 0.6s;
@@ -107,6 +122,8 @@ position: relative;
   }
   .nav-bar.active {
     height: 450px;
+    box-shadow: 0px 10px 10px  rgba(0, 0, 0, 0.274);
+    border-top: none;
   }
   .nav-bar ul {
     position: block;
@@ -125,18 +142,49 @@ position: relative;
 
 .nav-bar {
   padding-bottom: 0;
-
+  box-shadow: none;
+  margin-right: 2.5%;
 }
   .nav-bar.active ul{
   opacity: 1;
   pointer-events: auto;
-    
+  
 }
   .nav-bar ul li a {
   margin-bottom: 25Px;
   margin-top: 25px;
   }
   
+  .cont-H {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cont-ec {
+    background-color: #ffffff;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 25px 25px 0 0;
+  }
+  .cont-lt {
+    background-color: #ffffff;
+    margin: 15px;
+    margin-top: 0;margin-bottom: 0;
+    padding: 15px;
+    }
+    
+   .cont-bc {
+    background-color: #ffffff;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 0 0 25px 25px ;
+   }
+   .title-h {
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    margin-top: 20px;
+   }
 }
 
 /* Historia */
@@ -171,36 +219,45 @@ text-align: justify;
 
 }
 
-.cont-ce {
-  background-color: blue;
-  padding: 20px;
-  margin: 10px 45%;
-  margin-top: 20px;
-  text-align: center;
-
-}
+   .title-h {
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    margin-top: 20px;
+   }
 
 .cont-H {
-  background-color: aquamarine;
-  padding: 20px;
-  margin: 20px;
-  justify-content: space-between;
+  width: 90%;
+  display: flex;
+  margin: 20px 5%;
+  justify-content: space-around;
   text-align: justify;
 }
 
 .cont-ec {
-  background-color: green;
-  
+  background-color: #ffffff;
+  margin: 15px;
+  padding: 15px;
+  line-height: 1.5;
 }
 .cont-lt {
-  background-color: yellow;
-
-}
+  background-color: #ffffff;
+  margin: 15px;
+  padding: 15px;
+  line-height: 1.5;
+  }
+  
  .cont-bc {
-  background-color: red;
+  background-color: #ffffff;
+  margin: 15px;
+  padding: 15px;
+  line-height: 1.5;
  }
  .title {
-  background-color: aqua;
+  text-align: center;
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
  }
 
 
