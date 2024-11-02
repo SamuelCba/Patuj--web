@@ -27,13 +27,14 @@ header {
 }
 
 .nav-bar {
+  background-color: #0000006b;
 max-width: 100%;
   display: flex;
   padding-right: auto;
 margin-right: 69px;
 display: flex;
 border-radius: 20px;
-margin-left: 40px;
+margin-left: 90px;
 }
 
 .logo {
@@ -150,6 +151,7 @@ padding: 12px;
   .nav-bar ul li a {
   margin-bottom: 25Px;
   margin-top: 25px;
+  font-weight:600;
   }
   
   .cont-H {
