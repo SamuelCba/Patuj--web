@@ -9,11 +9,11 @@
 
 body{
 justify-content: center;
-  background-color: #90e9ff5e;
+  background-color: #4747475e;
 }
 header {
   max-width: 100%;
-  width: 90%;
+  width: 90vw;
   height: 90px;
   margin-left: 5%;
   background: linear-gradient(to right, rgb(229, 255, 0), rgb(21, 255, 0));
