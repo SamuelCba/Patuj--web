@@ -15,27 +15,23 @@
 
   <header>
     <div>
-      <a href="index.html"><img src="/imagenes/logo.png" alt="" class="escudo" ></a>
-      
+      <a href="index.html"><img src="/imagenes/logo.png" alt="" class="escudo"></a>
     </div>
     <div class="logo">
-      <a href="index.html" class="PATUJU">PATUJÚ</a>
+      <span>UE</span> <span>PATUJÚ</span>
     </div>
 
     <div class="bars">
-        <div class="linea"></div>
-        <div class="linea"></div>
-        <div class="linea"></div>
-       
-
+      <img src="/imagenes/menu.png" alt="menu" id="linea"  class="linea">
     </div>
+    <div class="nav">
     <nav class="nav-bar">
       <ul>
         <li>
           <a href="index.html">Inicio</a>
         </li>
         <li>
-          <a href="historia.html" >Historia</a>
+          <a href="historia.html">Historia</a>
         </li>
         <li>
           <a href="Logros.html">Logros</a>
@@ -49,11 +45,10 @@
         <li>
           <a href="otros.html">Otros</a>
         </li>
-
       </ul>
-      
     </nav>
-</header>
+  </div>
+  </header>
   <script src="script.js"></script>
   <div class="hymn-container">
     <div class="hymn-title">Himno al colegio Patujú</div>
@@ -80,6 +75,13 @@ Trabajad sin cesar
 Con firmeza temple lenidad
 
     </div>
+</div>  
+<div class="audio-player">
+  <button id="playPauseBtn" class="play">▶️
+  <audio id="audio">
+    <source src="/audio/1.mp3" type="audio/mp3"> asdjkfdgsf
+  </audio>
+  <input type="range" id="progress" value="0" max="100">
 </div>
   
 </body>
