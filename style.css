@@ -170,6 +170,10 @@ header {
     transition: 0.7s;
   }
 
+  .cont-hp {
+background-color: #000000;
+background-image: none;
+  }
   .cont-H {
     display: flex;
     flex-direction: column;
@@ -214,9 +218,7 @@ header {
 /* Historia */
 .cont-hp {
   margin-top: 20px;
-  background-image:
-    linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0)),
-    url(/imagenes/mod2.jpg);
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
   background-position: absolute;
   background-size: cover;
   background-repeat: no-repeat;
@@ -234,6 +236,7 @@ header {
 .t-h {
   padding: 20px;
   font-family: "Fjalla One", sans-serif;
+  
 }
 
 .p-h {
@@ -248,6 +251,7 @@ header {
   background-color: white;
   text-align: center;
   margin-top: 20px;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cont-H {
@@ -264,6 +268,7 @@ header {
   padding: 15px;
   line-height: 1.5;
   border-radius: 15px;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cont-lt {
@@ -272,6 +277,7 @@ header {
   padding: 15px;
   line-height: 1.5;
   border-radius: 15px;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cont-bc {
@@ -280,6 +286,7 @@ header {
   padding: 15px;
   line-height: 1.5;
   border-radius: 15px;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
 }
 
 .title {
