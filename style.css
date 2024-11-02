@@ -23,7 +23,6 @@ header {
   padding: 0 20px;
   border-radius: 15px;
   margin-top: 10px;
- 
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
 }
 
@@ -32,7 +31,7 @@ max-width: 100%;
   display: flex;
   padding-right: auto;
 margin-right: 69px;
-
+display: flex;
 border-radius: 20px;
 margin-left: 40px;
 }
@@ -48,9 +47,7 @@ margin-left: 40px;
   transition: 0.6s;
   font-size: 40px;
   font-family: Arial, Helvetica, sans-serif;
-  display: flex;
 
-  margin-left: 20px;
 }
 
 .escudo {
@@ -83,7 +80,7 @@ padding: 12px;
 
 .nav-bar ul li a:hover {
   color: black;
-  background: linear-gradient(to right, rgb(229, 255, 0), rgb(21, 255, 0));
+  background-color: rgb(229, 255, 0);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
 }
 .nav-bar ul li a.active {
@@ -185,6 +182,11 @@ padding: 12px;
     text-align: center;
     margin-top: 20px;
    }
+   .cont-hp {
+    background-color: #ffffff;
+    max-width: 90%;
+max-height: 90%;
+   }
 }
 
 /* Historia */
@@ -239,12 +241,14 @@ text-align: justify;
   margin: 15px;
   padding: 15px;
   line-height: 1.5;
+  border-radius: 15px;
 }
 .cont-lt {
   background-color: #ffffff;
   margin: 15px;
   padding: 15px;
   line-height: 1.5;
+  border-radius: 15px;
   }
   
  .cont-bc {
@@ -252,6 +256,7 @@ text-align: justify;
   margin: 15px;
   padding: 15px;
   line-height: 1.5;
+  border-radius: 15px;
  }
  .title {
   text-align: center;
@@ -264,7 +269,6 @@ text-align: justify;
  /*logros*/
 
  .cont-prin {
-
   max-width: 800px;
   margin: 0 auto;
  }
@@ -335,11 +339,12 @@ text-align: justify;
 
  /* Contenedor de la tabla */
 .container {
-    width: 80%;
+    width: 90%;
     max-width: 900px;
     margin: 0 auto;
     background-color: #ffffff;
     padding: 20px;
+    margin-top: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -387,7 +392,7 @@ h1 {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .container {
         width: 95%;
         padding: 10px;
@@ -397,30 +402,19 @@ h1 {
         padding: 8px 10px;
         font-size: 14px;
     }
-}
+    .container {
+      margin-top: 20px;
+      width: 90%;
+      max-width: 90%;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 
-.carousel-container {
-  width: 200px;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-}
 
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease;
-  width: max-content;
-}
+  }
 
-.carousel img {
-  width: 200px;
-  height: auto;
-}
-
-body
-{
-  justify-content: center;
-}
 .hymn-container {
   width: 50%;
   max-width: 900px;
@@ -457,4 +451,10 @@ body
   color: #333;
   text-align: center;
   white-space: pre-line; /* Para mantener los saltos de línea */
+}
+@media (max-width: 900px) {
+  .hymn-container {
+    width: 90%;
+  }
+
 }
