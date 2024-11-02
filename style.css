@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body{
+justify-content: center;
+  background-color: #2af1ff36;
+}
+header {
+  width: 90%;
+  height: 80px;
+  background: linear-gradient(to right, rgb(229, 255, 0), rgb(21, 255, 0));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  margin-left: 5%;
+  border-radius: 15px;
+  margin-top: 10px;
+
+}
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  Margin-right: 20%;
+  
+}
+.PATUJU {
+  color: #ffffff;
+  transition: 0.6s;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+.escudo {
+  margin-top: 3px;
+  width: 60px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
+}
+
+.bars {
+  display: none;
+}
+
+.nav-bar ul {
+display: flex;
+position: relative;
+}
+
+.nav-bar ul li a {
+  display: block;
+  color: white;
+  font-size: 18px;
+  padding: 10px 25px;
+  border-radius: 15px;
+  transition: all 0.2s ease;
+  margin: 0 5px;
+}
+
+.nav-bar ul li a:hover {
+  color: black;
+  background-color: rgb(245, 242, 77);
+
+}
+.nav-bar ul li a.active {
+  color: black;
+  background-color: rgb(229, 255, 0);
+
+}
+
+@media(max-width:900px) {
+  header {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .bars {
+    display: block;
+    cursor: pointer;
+  }
+  .bars .linea {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 6px 0px;
+  }
+  .nav-bar {
+    height: 0px;
+    position: absolute;
+    padding-bottom: 0;
+    top: 80px;
+    left: 5%;
+    width: 90%;
+    background: linear-gradient(to right, #d9ff00e5, rgba(21, 255, 0, 0.959));
+    transition: 0.6s;
+    border-radius: 0px 0px 25px 25px;
+    pointer-events: none;
+
+  }
+  .nav-bar.active {
+    height: 400px;
+  }
+  .nav-bar ul {
+    position: block;
+    top: 0;
+    display: block;
+    width: fit-content;
+    margin: 0px auto 0 auto;
+    text-align: center;
+    transition: 0.7s;
+    opacity: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.nav-bar {
+  padding-bottom: 0;
+
+}
+  .nav-bar.active ul{
+  opacity: 1;
+  pointer-events: auto;
+    
+}
+  .nav-bar ul li a {
+  margin-bottom: 25Px;
+  margin-top: 25px;
+  }
+  
+}
+
+/* Historia */
+.cont-hp {
+  margin-top: 20px;
+  background-image: 
+  linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0)),
+  url(/imagenes/mod2.jpg);
+  background-position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 250px;
+ width: 95vw;
+ background-color: rgb(255, 255, 255);
+ margin-left: 5%;
+ padding: 20px;
+max-width: 90%;
+max-height: 90%;
+
+text-align: justify;
+}
+
+.t-h {
+  padding: 20px;
+  font-family: "Fjalla One", sans-serif;
+}
+
+.p-h {
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.5;
+  max-width: 600px;
+
+}
+
+.cont-ce {
+  background-color: blue;
+  padding: 20px;
+  margin: 10px 45%;
+  margin-top: 20px;
+  text-align: center;
+
+}
+
+.cont-H {
+  background-color: aquamarine;
+  padding: 20px;
+  margin: 20px;
+  justify-content: space-between;
+  text-align: justify;
+}
+
+.cont-ec {
+  background-color: green;
+  
+}
+.cont-lt {
+  background-color: yellow;
+
+}
+ .cont-bc {
+  background-color: red;
+ }
+ .title {
+  background-color: aqua;
+ }
+
+
+ /*logros*/
+
+ .cont-prin {
+
+  max-width: 800px;
+  margin: 0 auto;
+ }
+ .t-lo {
+  font-weight: 700;
+  text-align: center;
+  background-color: rgb(126, 255, 86);
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 20px 20px 0 0;
+ }
+
+ .new-logro {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  line-height: 1.5;
+  text-align: justify;
+ }
+ .new-logrofin {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  line-height: 1.5;
+  text-align: justify;
+  border-radius: 0 0 20px 20px;
+ }
+ .new-cont {
+  padding: 0 20px;
+  text-align: justify;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+ }
+ .t-c {
+  font-size: 1.3em;
+  padding-left: 20px;
+  margin: 0px 20px;
+  margin-bottom: 10px;
+  color: #000000;
+  padding: 0px;
+  font-weight: 600;
+ }
+
+ @media (max-width:900px) {
+  .cont-prin {
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 20px;
+   }
+
+  .t-c {
+    justify-content: center;
+    width: 100% 20px;
+    font-size: 20px;
+    padding: 0px;
+    font-weight: 600;
+  }
+
+  .new-logro {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+ }
+ 
+ /*teachers*/
+
+ /* Contenedor de la tabla */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-weight: 400;
+    color: #4CAF50;
+}
+
+/* Estilo de la tabla */
+.professors-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Encabezados de la tabla */
+.professors-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: normal;
+    padding: 12px 15px;
+    text-align: left;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 2px solid #4CAF50;
+}
+
+/* Filas de la tabla */
+.professors-table td {
+    padding: 10px 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Estilo alternado para filas */
+.professors-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover en filas */
+.professors-table tr:hover {
+    background-color: #e8f5e9;
+    cursor: default;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .professors-table th, .professors-table td {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+.carousel-container {
+  width: 200px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: max-content;
+}
+
+.carousel img {
+  width: 200px;
+  height: auto;
+}
+
+body
+{
+  justify-content: center;
+}
+.hymn-container {
+  width: 50%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Título del himno */
+.hymn-title {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+/* Autores */
+.hymn-author {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* Texto del himno */
+.hymn-text {
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+  white-space: pre-line; /* Para mantener los saltos de línea */
+}
