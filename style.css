@@ -106,7 +106,7 @@ position: relative;
 
   }
   .nav-bar.active {
-    height: 400px;
+    height: 450px;
   }
   .nav-bar ul {
     position: block;
@@ -119,6 +119,8 @@ position: relative;
     opacity: 0;
     overflow-y: hidden;
     overflow-x: hidden;
+    padding: 4%;
+
 }
 
 .nav-bar {
