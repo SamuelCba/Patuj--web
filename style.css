@@ -526,7 +526,7 @@ h1 {
   padding: 10px;
   border-radius: 10px;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(85, 83, 83, 0.2);
 }
 
 #playPauseBtn {
@@ -568,6 +568,8 @@ h1 {
   margin: auto;
   overflow: hidden;
 margin-top: -13px;
+border-radius: 0 0 10px 10px;
+background-color: wheat;
 }
 
 .slider-frame ul {
@@ -594,7 +596,7 @@ margin-top: -13px;
   70% {margin-left: -200%;}
   
   75% {margin-left: -300%;}
-  95% {margin-left: -300%;}
+  100% {margin-left: -300%;}
 }
 
 
@@ -625,21 +627,22 @@ margin-top: -13px;
 }
 @keyframes slide-his {
   0% {margin-left: 0%;}
-  45% {margin-left: 50%;}
+  20% {margin-left: 0%;}
 
-  45% {margin-left: -100%;}
+  25% {margin-left: -100%;}
   50% {margin-left: -100%;}
 
   55% {margin-left: -200%;}
-  95% {margin-left: -200%;}
+  100% {margin-left: -200%;}
   
 }
 @media (max-width: 900px) {
 
   .slider-frame-his{
     width: 80vw;
-    height: 35vh;
+    height: 22vh;
     margin-bottom: 0;
+
   }
   .slider-frame-his img {
     width: 100%;
