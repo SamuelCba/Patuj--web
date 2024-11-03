@@ -4,12 +4,14 @@
   list-style: none;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
+box-sizing: border-box;
+
 }
 
 body {
   justify-content: center;
-  background-color: #d3d3d35e;
+
+  background: linear-gradient(to right, #d9ff006e, rgba(21, 255, 0, 0.548));
 }
 
 header {
@@ -25,10 +27,11 @@ header {
   border-radius: 15px;
   margin-top: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
+  z-index: 10;
 }
 
 .nav {
-  background-color: #0000006b;
+color: #000000;
   max-width: 100%;
   display: flex;
   border-radius: 20px;
@@ -63,18 +66,19 @@ header {
 
 .nav-bar ul {
 
+ align-items:end;
   display: flex;
   position: end;
   padding: 12px;
   max-width: 100%;
   width: 100%;
-  justify-content: right;
 
 }
 
 .nav-bar ul li a {
+  color: #000000;
   display: block;
-  color: white;
+
   font-size: 18px;
   padding: 10px 20px;
   margin: 0 4px;
@@ -159,7 +163,8 @@ header {
   .nav-bar.active ul {
     opacity: 1;
     pointer-events: auto;
-    transition: 0.7s;
+    transition: 2s;
+
   }
 
   .nav-bar ul li a {
@@ -167,7 +172,7 @@ header {
     margin-top: 25px;
     font-weight: 600;
     color: #000000;
-    transition: 0.7s;
+    transition: opacity 0.5s ease, transform 1s ease; 
   }
 
   .cont-hp {
@@ -219,18 +224,15 @@ background-image: none;
 .cont-hp {
   margin-top: 20px;
   box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
-  background-position: absolute;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-x: 250px;
   width: 95vw;
   background-color: rgb(255, 255, 255);
   margin-left: 5%;
   padding: 20px;
   max-width: 90%;
   max-height: 90%;
-
   text-align: justify;
+  border-radius: 15px;
+
 }
 
 .t-h {
@@ -242,7 +244,7 @@ background-image: none;
 .p-h {
   font-family: "Quicksand", sans-serif;
   line-height: 1.5;
-  max-width: 600px;
+  max-width: 100%;
 
 }
 
@@ -503,14 +505,13 @@ h1 {
   color: #333;
   text-align: center;
   white-space: pre-line;
-  /* Para mantener los saltos de línea */
+
 }
 
 @media (max-width: 900px) {
   .hymn-container {
     width: 90%;
   }
-
 }
 
 .play {
@@ -539,4 +540,108 @@ h1 {
   text-align: center;
   width: 300px;
   height: 300px;
+  display: flex;
+  align-items: center;
+  margin-left: calc(100% /4);
+}
+
+
+.ubi {
+  width: 20%;
+  background-color: aqua;
+  padding: 30px;
+  margin: 20px;
+  align-items: center;
+  display: flex;
+}
+
+/*otros html*/
+
+
+
+
+
+/*inicio*/
+.slider-frame{
+  width: 89vw;
+  height: 88vh;
+  margin: auto;
+  overflow: hidden;
+margin-top: -13px;
+}
+
+.slider-frame ul {
+  display: flex;
+  padding: 0;
+  width: 400%;
+  animation: slide 20s infinite alternate ease-in;
+}
+.slider-frame li {
+  list-style: none;
+  width: 100%;
+}
+.slider-frame img {
+  width: 100%;
+}
+@keyframes slide {
+  0% {margin-left: 0%;}
+  20% {margin-left: 0%;}
+
+  25% {margin-left: -100%;}
+  45% {margin-left: -100%;}
+
+  50% {margin-left: -200%;}
+  70% {margin-left: -200%;}
+  
+  75% {margin-left: -300%;}
+  95% {margin-left: -300%;}
+}
+
+
+
+
+.slider-frame-his{
+  width: 80vw;
+  height: 80vh;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: 20px;
+
+
+}
+.slider-frame-his ul {
+  display: flex;
+  padding: 0;
+  width: 300%;
+  animation: slide-his 15s infinite alternate ease-in;
+}
+.slider-frame-his li {
+  list-style: none;
+  width: 100%;
+}
+.slider-frame-his img {
+  width: 100%;
+}
+@keyframes slide-his {
+  0% {margin-left: 0%;}
+  45% {margin-left: 50%;}
+
+  45% {margin-left: -100%;}
+  50% {margin-left: -100%;}
+
+  55% {margin-left: -200%;}
+  95% {margin-left: -200%;}
+  
+}
+@media (max-width: 900px) {
+
+  .slider-frame-his{
+    width: 80vw;
+    height: 35vh;
+    margin-bottom: 0;
+  }
+  .slider-frame-his img {
+    width: 100%;
+  }
 }
