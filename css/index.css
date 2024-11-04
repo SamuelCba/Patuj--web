@@ -105,7 +105,7 @@
       }
  /*inicio*/
 .slider-frame{
-    width: 88vw;
+    width: 100vw;
     height: 90vh;
     margin: auto;
     overflow: hidden;
@@ -126,7 +126,7 @@
   }
   
   .slider-frame ul li div {
-    width: 90vw;
+    width: 100vw;
     height: 90vh;
   }
   
