@@ -101,7 +101,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        width: 98%;
+        width: 100%;
       }
  /*inicio*/
 .slider-frame{
@@ -110,7 +110,6 @@
     margin: auto;
     overflow: hidden;
   margin-top: -13px;
-  border-radius: 0 0 10px 10px;
   
   }
   
@@ -148,10 +147,19 @@
             flex-direction: column;
     
         }
+        .slider-frame{
+            width: 100vw;
+            height: 90vh;
+            margin: auto;
+            overflow: hidden;
+          margin-top: -13px;
+          
+          }
         .welcome p {
-            font-size: 60px;
+            font-size: 50px;
         }
         .welcome {
+            width: 90vw;
             background-clip: text;
             background: #000000;
             background-color: white;

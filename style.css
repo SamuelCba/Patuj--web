@@ -636,48 +636,6 @@ h1 {
 
 
 
-/*inicio*/
-.slider-frame{
-  width: 88vw;
-  height: 90vh;
-  margin: auto;
-  overflow: hidden;
-margin-top: -13px;
-border-radius: 0 0 10px 10px;
-
-}
-
-.slider-frame ul {
-  display: flex;
-  padding: 0;
-  width: 400%;
-  animation: slide 20s infinite alternate ease-in;
-}
-.slider-frame li {
-  list-style: none;
-  width: 100%;
-}
-
-.slider-frame ul li div {
-  width: 90vw;
-  height: 90vh;
-}
-
-
-@keydframes slide {
-  0% {margin-left: 0%;}
-  20% {margin-left: 0%;}
-
-  25% {margin-left: -100%;}
-  45% {margin-left: -100%;}
- 
-  50% {margin-left: -200%;}
-  70% {margin-left: -200%;}
-  
-  75% {margin-left: -300%;}
-  100% {margin-left: -300%;}
-}
-
 
 
 
