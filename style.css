@@ -638,7 +638,7 @@ h1 {
 
 /*inicio*/
 .slider-frame{
-  width: 90vw;
+  width: 88vw;
   height: 90vh;
   margin: auto;
   overflow: hidden;
@@ -662,33 +662,9 @@ border-radius: 0 0 10px 10px;
   width: 90vw;
   height: 90vh;
 }
-.primera-hoja {
-  display: flex;
-  background-image: url(/imagenes/UE\ patuju5.jpg);
-  background-color: rgb(253, 37, 37);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 100%;
 
-}
-.segunda-hoja {
-  background-color: #00ff37;
-  width: 100%;
 
-}
-.tercera-hoja {
-  background-color: #ea47ff;
-  width: 100%;
-
-}
-.cuarta-hoja {
-  background-color: #000000;
-  width: 100%;
-
-}
-
-@keyframes slide {
+@keydframes slide {
   0% {margin-left: 0%;}
   20% {margin-left: 0%;}
 
@@ -800,6 +776,7 @@ border-radius: 0 0 10px 10px;
     width: 100%;
     
   }
+ 
 }
 .divider {
   border: 0;
