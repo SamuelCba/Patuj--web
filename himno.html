@@ -82,8 +82,8 @@ Con firmeza temple lenidad
 
     <!-- Controles de reproducción -->
     <div class="controls">
-        <img id="restart" src="/imagenes/reset-btn.png" alt="Reiniciar">
-        <img id="playPause" src="/imagenes/play.png " alt="Play">
+        <img id="restart" src="https://res.cloudinary.com/dsi6qmhcg/image/upload/v1730690586/reset-btn_oufdvb.png" alt="Reiniciar">
+        <img id="playPause" src="https://res.cloudinary.com/dsi6qmhcg/image/upload/v1730564508/krglrizva6ujg61c82kk.png " alt="Play">
     </div>
 
     <!-- Barra de progreso -->
@@ -96,7 +96,6 @@ Con firmeza temple lenidad
 </div>
 
 <script>
-    // Selección de elementos
     const audio = document.getElementById("audio");
     const playPauseBtn = document.getElementById("playPause");
     const restartBtn = document.getElementById("restart");
@@ -104,30 +103,28 @@ Con firmeza temple lenidad
     const progressContainer = document.getElementById("progress-container");
     const downloadBtn = document.getElementById("download");
 
-    // Cambiar entre play y pause
     function togglePlayPause() {
         if (audio.paused) {
             audio.play();
-            playPauseBtn.src = "/imagenes/pause.png"; // Cambiar al ícono de pausa
+            playPauseBtn.src = "https://res.cloudinary.com/dsi6qmhcg/image/upload/v1730699005/pause_ct01va.png"; // Cambiar al ícono de pausa
         } else {
             audio.pause();
-            playPauseBtn.src = "/imagenes/play.png"; // Cambiar al ícono de play
+            playPauseBtn.src = "https://res.cloudinary.com/dsi6qmhcg/image/upload/v1730564508/krglrizva6ujg61c82kk.png"; // Cambiar al ícono de play
         }
     }
 
-    // Reiniciar canción
     function restartSong() {
         audio.currentTime = 0;
         audio.play();
         playPauseBtn.src = "/imagenes/play.png";
     }
 
-    // Actualizar barra de progreso
+
     audio.addEventListener("timeupdate", () => {
         const progressPercent = (audio.currentTime / audio.duration) * 100;
         progress.style.width = progressPercent + "%";
 
-        // Cambiar el color de la barra según avance
+
         if (progressPercent < 50) {
             progress.style.background = "linear-gradient(90deg,  #fcff42, #1eff0a)";
         } else {
@@ -135,7 +132,7 @@ Con firmeza temple lenidad
         }
     });
 
-    // Saltar a una posición específica en la canción al hacer clic en la barra de progreso
+
     function setProgress(event) {
         const width = progressContainer.clientWidth;
         const clickX = event.offsetX;
@@ -144,14 +141,14 @@ Con firmeza temple lenidad
         audio.currentTime = (clickX / width) * duration;
     }
 
-    // Acciones de los botones
+
     playPauseBtn.addEventListener("click", togglePlayPause);
     restartBtn.addEventListener("click", restartSong);
 
-    // Evento para saltar en la barra de progreso
+
     progressContainer.addEventListener("click", setProgress);
 
-    // Botón de descarga
+
     downloadBtn.addEventListener("click", () => {
         const link = document.createElement("a");
         link.href = audio.src;
