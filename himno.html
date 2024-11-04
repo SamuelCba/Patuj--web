@@ -22,7 +22,7 @@
     </div>
 
     <div class="bars">
-      <img src="/imagenes/menu.png" alt="menu" id="linea" >
+      <img src="/imagenes/menu.png" alt="menu" id="linea">
     </div>
     <div class="nav">
     <nav class="nav-bar">
@@ -48,11 +48,11 @@
       </ul>
     </nav>
   </div>
-  </header>
-
+  </header> 
+  <script src="script.js"></script>
   <div class="hymn-container">
     <div class="hymn-title">Himno al colegio Patujú</div>
-    <div class="hymn-author">Letra: Juan Pérez | Música: Ana López</div>
+    <div class="hymn-author">Letra: Elbio Yanaje Telao  | Música: Angel José Rebozo Zanga</div>
 
     <div class="hymn-text">
       ¡Oh supremo Patujú!
@@ -76,74 +76,89 @@ Con firmeza temple lenidad
 
     </div>
 </div>  
-<div class="audio-player">
-  <h2 class="player-title">Escuchar el Himno</h2>
-  <div class="player-controls">
-    <button id="playPauseBtn" class="play-button"><img src="/imagenes/play.png" alt="play" class="playBtn"></button>
-    <div class="progress-bar-container">
-      <input type="range" id="progressRange" min="0" max="100" value="0" class="progress-bar">
-      
-    </div>
-    <button id="resetBtn" class="reset-button"><img src="/imagenes/reset-btn.png" alt="reset" class="playBtn"></button>
-  </div>
-  <audio id="himnoAudio" src="/audio/1.mp3"></audio>
-  <a href="/audio/1.mp3" download="Himno_UE_Patuju.mp3" class="download-button">⬇️</a>
-  </div>
-  <audio id="himnoAudio" src="/audio/1.mp3"></audio>
-</div>
-</div>
-<script src="script.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('himnoAudio');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const playPauseImg = document.getElementById('playPauseImg');
-    const resetBtn = document.getElementById('resetBtn');
-    const progressRange = document.getElementById('progressRange');
+<div>
+<div class="music-player">
+    <audio id="audio" src="/audio/1.mp3"></audio>
 
-    // Cambia el estado de reproducción/pausa
-    playPauseBtn.addEventListener('click', () => {
+    <!-- Controles de reproducción -->
+    <div class="controls">
+        <img id="restart" src="/imagenes/reset-btn.png" alt="Reiniciar">
+        <img id="playPause" src="/imagenes/play.png " alt="Play">
+    </div>
+
+    <!-- Barra de progreso -->
+    <div class="progress-container" id="progress-container">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- Botón de descarga -->
+    <button class="download-btn" id="download">Descargar</button>
+</div>
+
+<script>
+    // Selección de elementos
+    const audio = document.getElementById("audio");
+    const playPauseBtn = document.getElementById("playPause");
+    const restartBtn = document.getElementById("restart");
+    const progress = document.getElementById("progress");
+    const progressContainer = document.getElementById("progress-container");
+    const downloadBtn = document.getElementById("download");
+
+    // Cambiar entre play y pause
+    function togglePlayPause() {
         if (audio.paused) {
             audio.play();
-            playPauseImg.src = "pause-icon.png"; // Cambia la imagen a pausa
+            playPauseBtn.src = "/imagenes/pause.png"; // Cambiar al ícono de pausa
         } else {
             audio.pause();
-            playPauseImg.src = "play-icon.png"; // Cambia la imagen a play
+            playPauseBtn.src = "/imagenes/play.png"; // Cambiar al ícono de play
         }
-    });
+    }
 
-    // Restablece la música al inicio
-    resetBtn.addEventListener('click', () => {
+    // Reiniciar canción
+    function restartSong() {
         audio.currentTime = 0;
-        audio.pause();
-        playPauseImg.src = "play-icon.png";
-        progressRange.value = 0; // Resetea la barra de progreso
-    });
+        audio.play();
+        playPauseBtn.src = "/imagenes/play.png";
+    }
 
-    // Actualiza la barra de progreso y el color dinámicamente
-    audio.addEventListener('timeupdate', () => {
-        const progress = (audio.currentTime / audio.duration) * 100;
-        progressRange.value = progress;
+    // Actualizar barra de progreso
+    audio.addEventListener("timeupdate", () => {
+        const progressPercent = (audio.currentTime / audio.duration) * 100;
+        progress.style.width = progressPercent + "%";
 
-        // Cambiar el color de la barra de progreso
-        let color;
-        if (progress < 50) {
-            color = '#4caf50'; // Verde
-        } else if (progress < 80) {
-            color = '#ff9800'; // Naranja
+        // Cambiar el color de la barra según avance
+        if (progressPercent < 50) {
+            progress.style.background = "linear-gradient(90deg,  #fcff42, #1eff0a)";
         } else {
-            color = '#f44336'; // Rojo
+            progress.style.background = "linear-gradient(90deg, #fcff42, #1eff0a)";
         }
-        // Aplica el gradiente de fondo
-        progressRange.style.background = linear-gradient(to right, ${color} ${progress}%, #ddd ${progress}%);
     });
 
-    // Permite que el usuario ajuste el tiempo de reproducción
-    progressRange.addEventListener('input', () => {
-        const seekTime = (progressRange.value / 100) * audio.duration;
-        audio.currentTime = seekTime;
+    // Saltar a una posición específica en la canción al hacer clic en la barra de progreso
+    function setProgress(event) {
+        const width = progressContainer.clientWidth;
+        const clickX = event.offsetX;
+        const duration = audio.duration;
+
+        audio.currentTime = (clickX / width) * duration;
+    }
+
+    // Acciones de los botones
+    playPauseBtn.addEventListener("click", togglePlayPause);
+    restartBtn.addEventListener("click", restartSong);
+
+    // Evento para saltar en la barra de progreso
+    progressContainer.addEventListener("click", setProgress);
+
+    // Botón de descarga
+    downloadBtn.addEventListener("click", () => {
+        const link = document.createElement("a");
+        link.href = audio.src;
+        link.download = "tu-cancion.mp3";
+        link.click();
     });
-});
 </script>
+</div>
 </body>
 </html>
