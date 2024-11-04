@@ -272,6 +272,27 @@ background-image: none;
   border-radius: 15px;
   box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
 }
+.img-ec img {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 50%;
+}
+.img-lt img {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 50%;
+}
+.img-bc img {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 50%;
+}
 
 .cont-lt {
   background-color: #ffffff;
@@ -369,6 +390,13 @@ background-image: none;
   .new-logro {
     margin-top: 0;
     margin-bottom: 10px;
+  }
+  .img-lt img {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 50%;
   }
 }
 
@@ -512,29 +540,86 @@ h1 {
   .hymn-container {
     width: 90%;
   }
-}
 
-.play {
-  width: 50px;
 }
 
 .audio-player {
-  width: 20%;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: 20px auto;
+  }
+  
+  .player-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  }
+  
+  .player-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(85, 83, 83, 0.2);
-}
-
-#playPauseBtn {
-  font-size: 24px;
-  cursor: pointer;
+  gap: 1rem;
+  }
+  
+  .play-button {
   background: none;
-  outline: none;
-}
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  }
+  
+  .progress-bar-container {
+  flex-grow: 1;
+  height: 0.5rem;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  overflow: hidden;
+
+  }
+  
+  .progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #d9ff00e5, rgba(21, 255, 0, 0.959));
+  width: 0%;
+  transition: width 0.1s linear;
+  }
+  .download-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s ease;
+    }
+    
+    .download-button:hover {
+    background-color: #45a049;
+    }
+    
+    .player-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    }
+    @media (max-width: 900px) {
+  
+      .audio-player {
+        width: 90%;
+        margin: 20px auto;
+      }
+    }
 
 .map {
   text-align: center;
@@ -563,13 +648,13 @@ h1 {
 
 /*inicio*/
 .slider-frame{
-  width: 89vw;
-  height: 88vh;
+  width: 90vw;
+  height: 90vh;
   margin: auto;
   overflow: hidden;
 margin-top: -13px;
 border-radius: 0 0 10px 10px;
-background-color: wheat;
+
 }
 
 .slider-frame ul {
@@ -582,16 +667,44 @@ background-color: wheat;
   list-style: none;
   width: 100%;
 }
-.slider-frame img {
-  width: 100%;
+
+.slider-frame ul li div {
+  width: 90vw;
+  height: 90vh;
 }
+.primera-hoja {
+  display: flex;
+  background-image: url(/imagenes/UE\ patuju5.jpg);
+  background-color: rgb(253, 37, 37);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+
+}
+.segunda-hoja {
+  background-color: #00ff37;
+  width: 100%;
+
+}
+.tercera-hoja {
+  background-color: #ea47ff;
+  width: 100%;
+
+}
+.cuarta-hoja {
+  background-color: #000000;
+  width: 100%;
+
+}
+
 @keyframes slide {
   0% {margin-left: 0%;}
   20% {margin-left: 0%;}
 
   25% {margin-left: -100%;}
   45% {margin-left: -100%;}
-
+ 
   50% {margin-left: -200%;}
   70% {margin-left: -200%;}
   
@@ -602,15 +715,16 @@ background-color: wheat;
 
 
 
+
+
 .slider-frame-his{
-  width: 80vw;
-  height: 80vh;
+  width: 50vw;
+  height: 60vh;
   margin: auto;
-  overflow: hidden;
-  border-radius: 10px;
+overflow: hidden;
   margin-top: 20px;
-
-
+  margin-bottom: 20px;  
+  border-radius: 20px;
 }
 .slider-frame-his ul {
   display: flex;
@@ -624,27 +738,91 @@ background-color: wheat;
 }
 .slider-frame-his img {
   width: 100%;
+
 }
 @keyframes slide-his {
   0% {margin-left: 0%;}
   20% {margin-left: 0%;}
 
-  25% {margin-left: -100%;}
-  50% {margin-left: -100%;}
+  30% {margin-left: -100%;}
+70% {margin-left: -100%;}
 
-  55% {margin-left: -200%;}
-  100% {margin-left: -200%;}
+  80% {margin-left: -200%;}
+  100%{margin-left: -200%;}
   
 }
+
+.slider-frame2 {
+  display: none;
+position: relative;
+}
+.slider-frame2{
+  width: 89vw;
+  height: 88vh;
+  margin: auto;
+  overflow: hidden;
+margin-top: -13px;
+border-radius: 0 0 10px 10px;
+}
+
+.slider-frame2 ul {
+  display: flex;
+  padding: 0;
+  width: 400%;
+  animation: slide2 20s infinite alternate ease-in;
+}
+.slider-frame2 li {
+  list-style: none;
+  width: 100%;
+}
+.slider-frame2 img {
+  width: 100%;
+}
+
+@keyframes slide2 {
+  0% {margin-left: 0%;}
+  20% {margin-left: 0%;}
+
+  25% {margin-left: -100%;}
+  45% {margin-left: -100%;}
+
+  50% {margin-left: -200%;}
+  70% {margin-left: -200%;}
+  
+  75% {margin-left: -300%;}
+  100% {margin-left: -300%;}
+}
+
 @media (max-width: 900px) {
 
+
+  .slider-frame2 {
+    display: block;
+    width: 70vh;
+    height: 70vh;
+  }
   .slider-frame-his{
     width: 80vw;
     height: 21vh;
     margin-bottom: 0;
-
   }
   .slider-frame-his img {
     width: 100%;
+    
   }
+}
+.divider {
+  border: 0;
+  height: 3px;
+  background-color: #0000004d;
+  margin:5px 30px;
+}
+.nuevo-texto {
+  position: absolute;
+  background-color: #f8f8f8c0;
+position: fixed;
+border-radius: 15px;
+padding: 30px;
+margin: 20%;
+margin-top: -35%;
 }
