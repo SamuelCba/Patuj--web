@@ -79,10 +79,12 @@ Con firmeza temple lenidad
 <div class="audio-player">
   <h2 class="player-title">Escuchar el Himno</h2>
   <div class="player-controls">
-    <button id="playPauseBtn" class="play-button">▶️</button>
+    <button id="playPauseBtn" class="play-button"><img src="/imagenes/play.png" alt="play" class="playBtn"></button>
     <div class="progress-bar-container">
-      <div id="progressBar" class="progress-bar"></div>
+      <input type="range" id="progressRange" min="0" max="100" value="0" class="progress-bar">
+      
     </div>
+    <button id="resetBtn" class="reset-button"><img src="/imagenes/reset-btn.png" alt="reset" class="playBtn"></button>
   </div>
   <audio id="himnoAudio" src="/audio/1.mp3"></audio>
   <a href="/audio/1.mp3" download="Himno_UE_Patuju.mp3" class="download-button">⬇️</a>
@@ -92,24 +94,56 @@ Con firmeza temple lenidad
 </div>
 <script src="script.js"></script>
 <script>
-  const audio = document.getElementById('himnoAudio');
-  const playPauseBtn = document.getElementById('playPauseBtn');
-  const progressBar = document.getElementById('progressBar');
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('himnoAudio');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playPauseImg = document.getElementById('playPauseImg');
+    const resetBtn = document.getElementById('resetBtn');
+    const progressRange = document.getElementById('progressRange');
 
-  playPauseBtn.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-      playPauseBtn.textContent = '⏸️';
-    } else {
-      audio.pause();
-      playPauseBtn.textContent = '▶️';
-    }
-  });
+    // Cambia el estado de reproducción/pausa
+    playPauseBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playPauseImg.src = "pause-icon.png"; // Cambia la imagen a pausa
+        } else {
+            audio.pause();
+            playPauseImg.src = "play-icon.png"; // Cambia la imagen a play
+        }
+    });
 
-  audio.addEventListener('timeupdate', () => {
-    const progress = (audio.currentTime / audio.duration) * 100;
-    progressBar.style.width = `${progress}%`;
-  });
+    // Restablece la música al inicio
+    resetBtn.addEventListener('click', () => {
+        audio.currentTime = 0;
+        audio.pause();
+        playPauseImg.src = "play-icon.png";
+        progressRange.value = 0; // Resetea la barra de progreso
+    });
+
+    // Actualiza la barra de progreso y el color dinámicamente
+    audio.addEventListener('timeupdate', () => {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressRange.value = progress;
+
+        // Cambiar el color de la barra de progreso
+        let color;
+        if (progress < 50) {
+            color = '#4caf50'; // Verde
+        } else if (progress < 80) {
+            color = '#ff9800'; // Naranja
+        } else {
+            color = '#f44336'; // Rojo
+        }
+        // Aplica el gradiente de fondo
+        progressRange.style.background = linear-gradient(to right, ${color} ${progress}%, #ddd ${progress}%);
+    });
+
+    // Permite que el usuario ajuste el tiempo de reproducción
+    progressRange.addEventListener('input', () => {
+        const seekTime = (progressRange.value / 100) * audio.duration;
+        audio.currentTime = seekTime;
+    });
+});
 </script>
 </body>
 </html>
