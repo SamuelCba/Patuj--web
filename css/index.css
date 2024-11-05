@@ -147,13 +147,25 @@
             flex-direction: column;
     
         }
+        .segunda-hoja {
+            background-image: url(/imagenes/UE\ patuju5.1.jpg);
+            flex-direction: column;
+    
+        }
         .slider-frame{
-            width: 100vw;
+            width: 96.4vw;
             height: 90vh;
-            margin: auto;
             overflow: hidden;
           margin-top: -13px;
           
+          }
+          @keyframes slide {
+            0% {margin-left: 0%;}
+            70% {margin-left: 0%;}
+          
+            80% {margin-left: -105%;}
+            100% {margin-left: -105%;}
+           
           }
         .welcome p {
             font-size: 50px;
@@ -293,4 +305,28 @@
         .close-button:hover {
             background-color: #ddd;
         }
-        @
+        @media (max-width: 900px) {
+            .news-section {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+
+            }
+
+            .news-section p {
+                width: 100%;
+                padding: 20px;
+                font-size: 1em;
+                color: #555;
+            }
+            .news-section h2 {
+                font-size: 1.8em;
+                color: #333;
+                
+            }
+            .news-section img {
+                margin: auto;
+                width: 300px;
+                max-width: 40%;
+            }
+        }
