@@ -74,7 +74,7 @@
         <div class="primera-hoja">
           <h1 class="welcome">
             <p>Bienvenidos</p>
-            A la Página oficial de la Unidad Educativa Patujú
+            A la Página oficial de la Unidad Educativa Patujú.
           </h1>
           <div class="es-pa">
             <img src="/imagenes/logo.png" alt="esucdo">
@@ -92,33 +92,94 @@
   </hr>
 
   <div>
-  <h1 class="UN">Últimas Novedades</h1>
-    <section class="noticias">
-      <article class="noticia">
-        <img src="https://scontent.fcbb3-1.fna.fbcdn.net/v/t39.30808-6/464835628_534979535943793_2211726845685318770_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=bSCqP52J8QsQ7kNvgFruLJb&_nc_zt=23&_nc_ht=scontent.fcbb3-1.fna&_nc_gid=AqaenW1o8dd0CJNqVIpVOU7&oh=00_AYDAdYA_Uufd_dfkyNzLra7eJIa7DTQrYbtBgGBmSeddiA&oe=672EC924" alt="Nueva tecnología">
-        <div class="noticia-contenido">
-          <h2>cronogramas de partidos de la Super liga 2024 de la Unidad Educativa Patujú</h2>
-          <p>Científicos desarrollan un nuevo algoritmo de IA capaz de predecir patrones climáticos con una precisión
-            sin precedentes.</p>
-        </div>
-      </article>
-      <article class="noticia">
-        <img src="/placeholder.svg?height=200&width=400" alt="Descubrimiento médico">
-        <div class="noticia-contenido">
-          <h2>Breakthrough en Medicina</h2>
-          <p>Investigadores descubren un nuevo tratamiento prometedor para el Alzheimer que podría retrasar
-            significativamente la progresión de la enfermedad.</p>
-        </div>
-      </article>
-      <article class="noticia">
-        <img src="/placeholder.svg?height=200&width=400" alt="Exploración espacial">
-        <div class="noticia-contenido">
-          <h2>Misión a Marte</h2>
-          <p>La NASA anuncia planes para una nueva misión tripulada a Marte, con el objetivo de establecer la primera
-            base humana en el planeta rojo.</p>
-        </div>
-      </article>
-    </section>
+ <!-- Sección de noticia -->
+ <div class="news-section">
+   <div class="text-cont"><h2>¡Concurso de Danzas para Mantener Viva la Cultura!</h2>
+  <p>La Unidad Educativa Patujú ha lanzado una convocatoria para un concurso de danzas, promovido por la Comisión Sociocultural, con premios para los cuatro primeros lugares. Los ensayos oficiales y las inscripciones ya están en marcha, y se invita a todos los estudiantes a participar y celebrar sus raíces culturales a través de la danza.</p><a href="/news/ConDeDanzas.html">ver mas.</a></div>
+  <img src="/imagenes/0.jpg" alt="Noticia" id="news-image">
+</div>
+
+<!-- Modal para la vista ampliada de la imagen -->
+<div class="modal" id="image-modal">
+  <div class="modal-content">
+      <img src="/imagenes/0.jpg" alt="Noticia ampliada" id="modal-image">
+      <button class="close-button" id="close-modal">&times;</button>
+  </div>
+</div>
+
+<script>
+    // Selección de elementos
+    const newsImage = document.getElementById("news-image");
+        const modal = document.getElementById("image-modal");
+        const modalImage = document.getElementById("modal-image");
+        const closeModalButton = document.getElementById("close-modal");
+
+        // Abrir modal al hacer clic en la imagen
+        newsImage.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+
+        // Cerrar modal al hacer clic en el botón de cierre
+        closeModalButton.addEventListener("click", () => {
+            modal.style.display = "none";
+            modalImage.classList.remove("zoomed"); // Quitar zoom al cerrar
+            modalImage.style.transform = 'translate(0, 0)'; // Resetear posición
+        });
+
+        // Cerrar modal al hacer clic fuera de la imagen ampliada
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+                modalImage.classList.remove("zoomed"); // Quitar zoom al cerrar
+                modalImage.style.transform = 'translate(0, 0)'; // Resetear posición
+            }
+        });
+
+        // Variables para movimiento de imagen
+        let isDragging = false;
+        let startX, startY, initialX, initialY;
+
+        // Activar/desactivar zoom y movimiento al hacer clic en la imagen del modal
+        modalImage.addEventListener("click", (event) => {
+            if (!modalImage.classList.contains("zoomed")) {
+                modalImage.classList.add("zoomed");
+            } else {
+                modalImage.classList.remove("zoomed");
+                modalImage.style.transform = 'translate(0, 0)'; // Resetear posición
+            }
+        });
+
+        // Comenzar a arrastrar
+        modalImage.addEventListener("mousedown", (event) => {
+            isDragging = true;
+            startX = event.clientX;
+            startY = event.clientY;
+            initialX = modalImage.offsetLeft;
+            initialY = modalImage.offsetTop;
+            modalImage.style.cursor = 'grabbing'; // Cambiar cursor
+        });
+
+        // Arrastrar la imagen
+        modalImage.addEventListener("mousemove", (event) => {
+            if (isDragging) {
+                const dx = event.clientX - startX;
+                const dy = event.clientY - startY;
+                modalImage.style.transform = `translate(${initialX + dx}px, ${initialY + dy}px) scale(1.5)`;
+            }
+        });
+
+        // Finalizar arrastre
+        modalImage.addEventListener("mouseup", () => {
+            isDragging = false;
+            modalImage.style.cursor = 'grab'; // Volver cursor original
+        });
+
+        // Finalizar arrastre al salir del área de la imagen
+        modalImage.addEventListener("mouseleave", () => {
+            isDragging = false;
+            modalImage.style.cursor = 'grab'; // Volver cursor original
+        });
+</script>
   </div>
 
 </body>
