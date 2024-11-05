@@ -305,12 +305,22 @@
         .close-button:hover {
             background-color: #ddd;
         }
+
+        .news-section a {
+            color: blue;
+        }
         @media (max-width: 900px) {
             .news-section {
             display: flex;
             flex-direction: column;
             padding: 20px;
 
+            }
+            .news-section a {
+                margin: auto;
+                color: blue;
+                display: flex;
+                float: right;
             }
 
             .news-section p {
