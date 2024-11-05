@@ -329,4 +329,13 @@
                 width: 300px;
                 max-width: 40%;
             }
+            .modal-content img {
+                margin-left: 15%;
+                max-width: 70%;
+                min-width: 70%;
+                height: auto;
+                border-radius: 8px;
+                cursor: grab;
+                transition: transform 0.3s ease;
+            }
         }
